@@ -7,6 +7,6 @@
 * images/ - каталог с изображениями
 * items/ - каталог с основными главами
 * spbudiploma.sty - стилевой файл
-* titlepage.tex - титульный лист
 * thesis-main.tex - основной файл
 * thesis.pdf - скомпилированный pdf файл
+* titlepage.tex - титульный лист
