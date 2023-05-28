@@ -4,9 +4,9 @@
 
 ### Структура
 
-* `images/` - каталог с изображениями
-* `items/` - каталог с основными главами
-* `spbudiploma.sty` - стилевой файл
-* `thesis-main.tex` - основной файл
-* `thesis.pdf` - скомпилированный pdf файл
-* `titlepage.tex` - титульный лист
+* `images/` &mdash; каталог с изображениями
+* `items/` &mdash; каталог с основными главами
+* `spbudiploma.sty` &mdash; стилевой файл
+* `thesis-main.tex` &mdash; основной файл
+* `thesis.pdf` &mdash; скомпилированный pdf файл
+* `titlepage.tex` &mdash; титульный лист
