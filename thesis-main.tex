@@ -1,0 +1,152 @@
+\documentclass[a4paper,article,14pt]{extarticle}
+
+\usepackage{spbudiploma}
+\usepackage{euscript}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage{textcomp}
+\usepackage[inkscapeformat=png]{svg}
+\usepackage{minted} % требует параметра -shell-escape
+\usepackage[ruled]{algorithm2e}
+
+\renewcommand{\theFancyVerbLine}{\sffamily{\small \oldstylenums{\arabic{FancyVerbLine}}}}
+
+\newenvironment{code}{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[linenos,baselinestretch=1,style=abap]{java}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newenvironment{zerocode}{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[baselinestretch=1,style=abap]{json}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newenvironment{nocode}{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[baselinestretch=1]{yaml}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newcommand{\var}[1]{$\mathtt{#1}$}
+
+\begin{document}
+
+\input{titlepage.tex}
+
+\tableofcontents
+\pagebreak
+
+\include{items/_intro}
+\include{items/_problem}
+\include{items/chap1}
+\include{items/chap2}
+\include{items/chap3}
+\include{items/chap4}
+\include{items/chap5}
+\include{items/concl}
+
+\begin{thebibliography}{1}
+% ==================== intro ====================
+\bibitem{dynca} B. Thomas. The concept of dynamic analysis. ACM SIGSOFT Software Engineering Note, 1999, pp. 216–234.
+
+% аналоги
+\bibitem{spotbugs} SpotBugs repository. URL: \url{https://github.com/spotbugs/spotbugs} (дата обр. 17.05.2023).
+\bibitem{coverity} Coverity. URL: \url{https://scan.coverity.com/} (дата обр. 12.04.2023).
+\bibitem{codeql} CodeQL repository. URL: \url{https://github.com/github/codeql/} (дата обр. 12.04.2023).
+\bibitem{fbinfer} FB Infer. URL: \url{https://fbinfer.com/} (дата обр. 12.04.2023).
+
+\bibitem{sym-compare} H. Li, T. Kim, M. Bat-Erdene, H. Lee. Software Vulnerability Detection Using Backward Trace Analysis and Symbolic Execution. International Conference on Availability, Reliability and Security, 2013, pp. 446-454.
+
+% \bibitem{windows} P. Godefroid, M. Levin, D. Molnar. SAGE: Whitebox Fuzzing for Security Testing. ACM Queue, 2012, Vol. 10, pp. 20–27.
+
+\bibitem{cwe} CWE Top 25 Most Dangerous Software Weaknesses, 2022. URL: \url{https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html} (дата обр. 12.04.2023).
+\bibitem{utbot} UnitTestBot repository. URL: \url{https://github.com/UnitTestBot/UTBotJava/} (дата обр. 12.04.2023).
+\bibitem{idea} Jetbrains IntelliJ IDEA repository. URL: \url{https://github.com/JetBrains/intellij-community} (дата обр. 12.04.2023).
+
+% ================ chap1 [overview] =============
+
+% spotbugs
+\bibitem{fsbugs} Find Security Bugs repository. URL: \url{https://github.com/find-sec-bugs/find-sec-bugs} (дата обр. 17.05.2023).
+\bibitem{fsbugs-fp} S. Afrose, Y. Xiao, S. Rahaman, B. P. Miller, D. Yao. Evaluation of Static Vulnerability Detection Tools With Java Cryptographic API Benchmarks. IEEE Transactions on Software Engineering, 2023, vol. 49, no. 2, pp. 485-497.
+
+% coverity
+\bibitem{curiosity} Mars Rover Curiosity's 'Space Doctors' On Bug Hunting In Space. URL: \url{https://www.huffingtonpost.co.uk/2012/09/27/curiositys-doctors-mars-rover-coverity_n_1919115.html} (дата обр. 19.04.2023).
+\bibitem{coverity-fp-1} N. Imtiaz, L. Williams. A synopsis of static analysis alerts on open source software. HotSoS '19: Proceedings of the 6th Annual Symposium on Hot Topics in the Science of Security, 2019, pp. 1–3.
+\bibitem{coverity-fp-2} S. Afrose, S. Rahaman, D. Yao. CryptoAPI-Bench: A Comprehensive Benchmark on Java Cryptographic API Misuses. IEEE Cybersecurity Development (SecDev), 2019, pp. 49-61.
+\bibitem{coverity-fp-3} S. Li, Z. Su. Finding Unstable Code via Compiler-Driven Differential Testing. ASPLOS 2023: Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Vol. 3, 2023, pp.238–251
+
+% codeql
+\bibitem{codeql-fp} W. Kang, B, Son, K, Heo. TRACER: Signature-based Static Analysis for Detecting Recurring Vulnerabilities. 2022 ACM SIGSAC Conference on Computer and Communications Security (CCS '22), 2022, pp, 1695–1708.
+
+% infer
+\bibitem{seplog} D. Distefano, P. O’Hearn, H. Yang. A Local Shape Analysis Based on Separation Logic. TACAS, 2006, pp. 287–302.
+\bibitem{biab} C. Calcagno, D. Distefano, P. O’Hearn, H. Yang. Compositional Shape Analysis by Means of Bi-Abduction. Journal of the ACM, 2011, Vol. 58, pp 1–66.
+\bibitem{infer-fp} A. Arusoaie, S. Ciobâca, V. Craciun, D. Gavrilut, D. Lucanu. A Comparison of Open-Source Static Analysis Tools for Vulnerability Detection in C/C++ Code. 19th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC), 2017, pp. 161-168.
+
+% символьное исполнение
+\bibitem{sym-3d} C. Cadar, K. Sen. Symbolic execution for software testing: three decades later. Communications of the ACM, 2013, Vol. 56, no. 2, pp. 82–90.
+\bibitem{sym-sur} R. Baldoni, E. Coppa, D’elia Daniele Cono,
+C. Demetrescu, I. Finocchi. A survey of symbolic
+execution techniques. ACM Computing Surveys (CSUR), 2018. Vol. 51, no. 3, pp. 1–39.
+
+% smt
+\bibitem{smt} D. Monniaux. A Survey of Satisfiability Modulo Theory. Computer Algebra in Scientific Computing, 2016, pp. 1–24.
+\bibitem{z3} L. De Moura, N. Bjørner. Z3: An efficient SMT
+solver. International conference on Tools and Algorithms for the
+Construction and Analysis of Systems, 2008. pp. 337–340.
+
+% taint
+\bibitem{taint} A. Ermolinskiy, S. Katti, S. Shenker, L. Fowler, M. McCauley. Towards practical taint tracking. Technical Report
+UCB/EECS-2010-92, EECS Department, 2010, pp. 1–20.
+\bibitem{dyn-taint} M. Kang, S. McCamant, P. Poosankam, D. Song. DTA++: Dynamic Taint Analysis with Targeted Control-Flow Propagation. Proceedings of the Network and Distributed System Security Symposium, NDSS, 2011, pp. 1–14.
+\bibitem{sym-taint} E. J. Schwartz, T. Avgerinos, D. Brumley. All You Ever Wanted to Know about Dynamic Taint Analysis and Forward Symbolic Execution (but Might Have Been Afraid to Ask). IEEE Symposium on Security and Privacy, 2010, pp. 317–331.
+
+% ================ chap2 [sarif] ================
+
+\bibitem{sarif} Static Analysis Results Interchange Format (SARIF) Version 2.0. URL: \url{https://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html} (дата обр. 26.04.2023).
+\bibitem{json} JSON format. URL: \url{https://www.json.org/json-ru.html} (дата обр. 26.05.2023).
+\bibitem{vscode} Visual Studio Code repository. URL: \url{https://github.com/microsoft/vscode} (дата обр. 26.04.2023).
+\bibitem{sarif-git} SARIF support for code scanning. URL: \url{https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning} (дата обр. 26.04.2023).
+
+% ================ chap3 [plugin] ===============
+
+\bibitem{idea-plugins} The IntelliJ Platform. URL: \url{https://plugins.jetbrains.com/docs/intellij/intellij-platform.html} (дата обр. 27.04.2023).
+
+% ================ chap4 [taint] ================
+
+\bibitem{yaml} The Official YAML Web Site. URL: \url{https://yaml.org/} (дата обр. 02.05.2023).
+
+% =============== chap5 [results] ===============
+
+\bibitem{juliet} Juliet Test Suite 1.3. URL: \url{https://samate.nist.gov/SARD/test-suites/111} (дата обр. 17.05.2023).
+
+% проекты для тестирования
+\bibitem{tape} Tape repository. URL: \url{https://github.com/square/tape} (дата обр. 03.05.2023).
+% \bibitem{ttorrent} Ttorrent repository. URL: \url{https://github.com/mpetazzoni/ttorrent} (дата обр. 03.05.2023).
+\bibitem{fastjson} Fastjson repository. URL: \url{https://github.com/alibaba/fastjson} (дата обр. 07.05.2023).
+% \bibitem{slf4j} SLF4J repository. URL: \url{https://github.com/qos-ch/slf4j} (дата обр. 07.05.2023).
+% \bibitem{logback} Logback repository. URL: \url{https://github.com/qos-ch/logback} (дата обр. 07.05.2023).
+
+\bibitem{codeforces} CodeForces. URL: \url{https://codeforces.com/} (дата обр. 03.05.2023)
+\bibitem{cf-805B} Codeforces Round 805, задача B. URL: \url{https://codeforces.com/contest/1702/problem/B} (дата обр. 03.05.2023)
+\end{thebibliography}
+
+\include{items/p_app}
+
+\end{document}
